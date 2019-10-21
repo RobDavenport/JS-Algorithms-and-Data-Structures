@@ -64,7 +64,6 @@ const radixSort = (arr) => {
 }
 
 //HELPER FUNCTIONS
-
 const generateArray = (length, max) => {
     return Array.from({ length }, () => Math.floor(Math.random() * max))
 }
@@ -75,6 +74,8 @@ const doSort = (sortFunc, algoName, arr) => {
     console.log("Sorted: " + sortFunc(arr));
     console.log("----------");
 }
+
+//TESTING CODE
 
 // doSort(bubbleSort, 'Bubble Sort', generateArray(30, 100));
 // doSort(selectionSort, 'Selection Sort', generateArray(30, 100));
