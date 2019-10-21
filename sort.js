@@ -33,7 +33,14 @@ const selectionSort = (arr) => {
 }
 
 const insertionSort = (arr) => {
-    //todo
+    for (let i = 1; i < arr.length; i++) {
+        let current = arr[i];
+
+        for (var j = i - 1; j >= 0 && current < arr[j] ; j--)
+            arr[j+1] = arr[j];
+
+        arr[j+1] = current;
+    }
 
     return arr;
 }
@@ -70,8 +77,8 @@ const doSort = (sortFunc, algoName, arr) => {
 }
 
 // doSort(bubbleSort, 'Bubble Sort', generateArray(30, 100));
-//doSort(selectionSort, 'Selection Sort', generateArray(30, 100));
-doSort(insertionSort, 'Insertion Sort', generateArray(30, 100));
+// doSort(selectionSort, 'Selection Sort', generateArray(30, 100));
+// doSort(insertionSort, 'Insertion Sort', generateArray(30, 100));
 // doSort(mergeSort, 'Merge Sort', generateArray(30, 100));
 // doSort(quickSort, 'Quick Sort', generateArray(30, 100));
 // doSort(radixSort, 'Radix Sort', generateArray(30, 1000));
