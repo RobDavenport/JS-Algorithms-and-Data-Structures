@@ -26,7 +26,7 @@ class SinglyLinkedList {
 
     pop() {
         if (this.length === 0) return undefined;
-        
+
         let node = this.head;
         let newTail = node;
 
@@ -84,7 +84,7 @@ class SinglyLinkedList {
 
         for (let i = 0; i < idx; i++)
             node = node.next;
-        
+
         return node;
     }
 
@@ -107,7 +107,7 @@ class SinglyLinkedList {
             let next = prev.next;
             prev.next = node;
             node.next = next;
-            
+
             this.length++;
         }
         return true;
@@ -117,11 +117,11 @@ class SinglyLinkedList {
         if (idx < 0 || idx >= this.length) return undefined;
         else if (idx === this.length - 1) return this.pop();
         else if (idx === 0) return this.shift();
-        
+
         let prev = this.get(idx - 1);
         let node = prev.next;
         prev.next = node.next;
-       
+
         this.length--;
         return node;
     }
