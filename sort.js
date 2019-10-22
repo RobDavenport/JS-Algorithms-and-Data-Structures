@@ -55,9 +55,9 @@ const merge = (left, right) => {
     }
 
     if (i < left.length)
-        result.push(left.slice(i));
+        result.push(...left.slice(i));
     else if (j < right.length)
-        result.push(right.slice(j));
+        result.push(...right.slice(j));
 
     return result;
 }
@@ -69,6 +69,10 @@ const mergeSort = (arr) => {
     let mid = Math.floor(arr.length / 2);
 
     return merge(mergeSort(arr.slice(0, mid)), mergeSort(arr.slice(mid)));
+}
+
+const pivot = () => {
+
 }
 
 const quickSort = (arr) => {
@@ -101,5 +105,5 @@ const doSort = (sortFunc, algoName, arr) => {
 // doSort(selectionSort, 'Selection Sort', generateArray(30, 100));
 // doSort(insertionSort, 'Insertion Sort', generateArray(30, 100));
 // doSort(mergeSort, 'Merge Sort', generateArray(30, 100));
-doSort(quickSort, 'Quick Sort', generateArray(30, 100));
+// doSort(quickSort, 'Quick Sort', generateArray(30, 100));
 // doSort(radixSort, 'Radix Sort', generateArray(30, 1000));
