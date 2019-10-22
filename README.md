@@ -8,10 +8,12 @@ Selection Sort
 
 Insertion Sort
 
-TODO:
-
 Merge Sort
 
 Quick Sort
 
 Radix Sort
+
+TODO:
+
+Data Structures
