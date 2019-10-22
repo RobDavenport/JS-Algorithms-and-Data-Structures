@@ -71,12 +71,27 @@ const mergeSort = (arr) => {
     return merge(mergeSort(arr.slice(0, mid)), mergeSort(arr.slice(mid)));
 }
 
-const pivot = () => {
+const pivot = (arr, start = 0, end = arr.length - 1) => {
+    let val = arr[start];
+    let idx = start;
 
+    for (let i = start + 1; i <= end; i++) {
+        if (arr[i] < val) {
+            idx++;
+            [arr[i], arr[idx]] = [arr[idx], arr[i]];
+        }
+    }
+
+    [arr[start], arr[idx]] = [arr[idx], arr[start]];
+    return idx;
 }
 
-const quickSort = (arr) => {
-    //todo
+const quickSort = (arr, left = 0, right = arr.length - 1) => {
+    if (left < right) {
+        let idx = pivot(arr, left, right);
+        quickSort(arr, left, idx - 1);
+        quickSort(arr, idx + 1, right);
+    }
 
     return arr;
 }
@@ -106,4 +121,4 @@ const doSort = (sortFunc, algoName, arr) => {
 // doSort(insertionSort, 'Insertion Sort', generateArray(30, 100));
 // doSort(mergeSort, 'Merge Sort', generateArray(30, 100));
 // doSort(quickSort, 'Quick Sort', generateArray(30, 100));
-// doSort(radixSort, 'Radix Sort', generateArray(30, 1000));
+doSort(radixSort, 'Radix Sort', generateArray(30, 1000));
